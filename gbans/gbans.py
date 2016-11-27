@@ -92,7 +92,10 @@ class Gbans:
                     if member.id in bannedids:
                         await self.bot.send_message(member, str(member.server)
                                                     + " is protected by Talos.")
-                        await self.bot.kick(member)
+                        try:
+                            await self.bot.kick(member)
+                        except:
+                            pass
 
 
 def check_server(self, ctx):
