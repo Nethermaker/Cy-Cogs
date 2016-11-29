@@ -46,9 +46,9 @@ class Gbans:
             return
 
         with open('data/gbans/banlist.txt', 'r') as banlist:
-            bannedids = banlist.read()
+            bannedids = banlist.readlines()
 
-            await self.bot.send_message(author, '\n'.join(bannedids))
+            await self.bot.send_message(author, bannedids)
 
     @g.group(pass_context=True)
     async def toggle(self, ctx):
