@@ -49,7 +49,7 @@ class Gbans:
             bannedids = banlist.read().splitlines()
 
             for i in bannedids:
-                await self.bot.send_message(author, "<@" + i + ">")
+                await self.bot.send_message(author, i)
 
     @g.group(pass_context=True)
     async def toggle(self, ctx):
