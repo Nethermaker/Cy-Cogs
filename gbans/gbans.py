@@ -37,14 +37,13 @@ class Gbans:
             else:
                 banlist.write(user.id + '\n')
 
-    @checks.check_server()
     @g.group(pass_context=True)
     async def list(self, ctx):
         """Lists all globally banned users"""
 
         author = ctx.message.author
-        # if not check_server(self, ctx):
-        #     return
+        if not check_server(self, ctx):
+            return
 
         with open('data/gbans/banlist.txt', 'r') as banlist:
             b = banlist.read().splitlines()
