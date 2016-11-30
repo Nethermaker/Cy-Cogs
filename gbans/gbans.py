@@ -36,6 +36,10 @@ class Gbans:
                 await self.bot.say("User already banned.")
             else:
                 banlist.write(user.id + '\n')
+                try:
+                    await self.bot.kick(user)
+                except:
+                    pass
 
     @g.group(pass_context=True)
     async def list(self, ctx):
