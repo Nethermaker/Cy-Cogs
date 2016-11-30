@@ -37,13 +37,14 @@ class Gbans:
             else:
                 banlist.write(user.id + '\n')
 
+    @checks.check_server()
     @g.group(pass_context=True)
     async def list(self, ctx):
         """Lists all globally banned users"""
 
         author = ctx.message.author
-        if not check_server(self, ctx):
-            return
+        # if not check_server(self, ctx):
+        #     return
 
         with open('data/gbans/banlist.txt', 'r') as banlist:
             b = banlist.read().splitlines()
@@ -90,8 +91,8 @@ class Gbans:
                 with open('data/gbans/banlist.txt', 'r') as banlist:
                     bannedids = banlist.read().splitlines()
                     if member.id in bannedids:
-                        await self.bot.send_message(member, str(member.server)
-                                                    + " is protected by Talos.")
+                        # await self.bot.send_message(member, str(member.server)
+                        #                             + " is protected by Talos.")
                         try:
                             await self.bot.kick(member)
                         except:
