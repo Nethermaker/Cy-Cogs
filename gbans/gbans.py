@@ -46,8 +46,8 @@ class Gbans:
             return
 
         with open('data/gbans/banlist.txt', 'r') as banlist:
-            bannedidslist = banlist.read()
-            bannedids = '\n'.join(bannedidslist)
+            b = banlist.read().splitlines()
+            bannedids = '\n'.join(b)
 
             await self.bot.send_message(author, bannedids)
 
