@@ -80,9 +80,9 @@ class Gbans:
         """Shows protection status"""
 
         if check_server(self, ctx):
-            await self.bot.say("Talos protection `online`.")
+            await self.bot.say("Protection `online`.")
         else:
-            await self.bot.say("Talos protection `offline`.")
+            await self.bot.say("Protection `offline`.")
 
     async def on_member_join(self, member):
         """Checks member if they are banned"""
