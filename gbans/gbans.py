@@ -69,11 +69,11 @@ class Gbans:
                     if i != server + "\n":
                         servers.write(i)
                 servers.truncate()
-            await self.bot.say("Talos protection disabled.")
+            await self.bot.say("Protection disabled.")
         else:
             with open('data/gbans/servers.txt', 'a') as servers:
                 servers.write(server + '\n')
-                await self.bot.say("Talos protection enabled.")
+                await self.bot.say("Protection enabled.")
 
     @g.group(pass_context=True)
     async def status(self, ctx):
