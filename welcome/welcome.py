@@ -165,8 +165,10 @@ class Welcome:
 
     async def on_message(self, message, member):
         mem = member.id
+        print(mem)
+        print(member)
         channel = '165244564498677760'  # Bad hardcoded value, will fix soon...you shouldn't be using this cog anyway.
-        if message.channel.id == channel and mem != '199646936196841473':
+        if message.channel.id == channel:
             await self.bot.delete_message(message)
 
 
