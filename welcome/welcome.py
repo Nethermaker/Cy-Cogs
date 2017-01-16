@@ -163,9 +163,10 @@ class Welcome:
         else:
             await self.bot.send_message(ctx.message.channel, "I do not have permissions to send messages to {0.mention}".format(channel))
 
-    async def on_message(self, message):
+    async def on_message(self, message, member):
+        mem = member.id
         channel = '165244564498677760'  # Bad hardcoded value, will fix soon...you shouldn't be using this cog anyway.
-        if message.channel.id == channel:
+        if message.channel.id == channel and mem != '199646936196841473':
             await self.bot.delete_message(message)
 
 
