@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Praedyth",
+    "SHORT" : "Red's welcome cog modified",
+    "DESCRIPTION" : "Simple QOL modifications",
+    "DISABLED" : false,
+    "NAME" : "Welcome",
+    "INSTALL_MSG" : "Don't install this."
+}

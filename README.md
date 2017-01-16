@@ -1,2 +1,2 @@
 # Prae-Cogs
-Praedyth's personal cogs, would not recommend trying to run these.
+Praedyth's personal cogs, would not recommend installing these.
