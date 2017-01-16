@@ -167,7 +167,6 @@ class Welcome:
         channel = '165244564498677760'  # Bad hardcoded value, will fix soon...you shouldn't be using this cog anyway.
         if message.channel.id == channel:
             await self.bot.delete_message(message)
-        await self.bot.process_commands(message)
 
 
 def check_folders():
