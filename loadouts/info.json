@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Vorducas",
+    "SHORT" : "Titanfall 2 loadout generator",
+    "DESCRIPTION" : "Generates random loadouts for pilots in Titanfall 2",
+    "DISABLED" : false,
+    "NAME" : "loadouts",
+    "INSTALL_MSG" : ""
+}
