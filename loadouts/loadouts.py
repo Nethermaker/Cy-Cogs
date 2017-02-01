@@ -21,6 +21,23 @@ Kit2 = ['Kill Report', 'Wallhang', 'Hover', 'Low Profile']
 
 Titan = ['Ion', 'Tone', 'Legion', 'Ronin', 'Scorch', 'Northstar']
 
+TitanKit1 = ['Assault Chip', 'Stealth Auto-Eject', 'Turbo Engine', 'Overcore', 'Nuclear Ejection', 'Counter Ready']
+
+Ion_kits = ['Entangled Energy', 'Zero-Point Tripwire', 'Vortex Amplifier',
+            'Grand Cannon', 'Refraction Lens']
+Scorch_kits = ['Wildfire Launcher', 'Tempered Plating', 'Inferno Shield',
+               'Fuel for the Fire', 'Scorched Earth']
+Northstar_kits = ['Piercing Shot', 'Enhanced Payload', 'Twin Traps',
+                  'Viper Thrusters', 'Threat Optics']
+Ronin_kits = ['Ricochet Rounds', 'Thunderstorm', 'Temporal Anomaly',
+              'Highlander', 'Phase Reflex']
+Tone_kits = ['Enhanced Tracker Rounds', 'Reinforced Particle Wall',
+             'Pulse-Echo', 'Rocket Barrage', 'Burst Loader']
+Legion_kits = ['Enhanced Ammo Capacity', 'Sensor Array', 'Bulwark',
+               'Leigh-Weight Alloys', 'Hidden Compartment']
+               
+TitanfallKits = ['Dome Shield', 'Warpfall']
+
 Boost = ['Amped Weapons', 'Ticks', 'Pilot Sentry', 'Map Hack', 'Battery Back-Up',
          'Radar Jammer', 'Titan Sentry', 'Smart Pistol', 'Phase Rewind', 
          'Hard Cover', 'Holo Pilot Nova', 'Dice Roll']
@@ -48,7 +65,23 @@ def loadout():
     list.append('Ordanance: ' + str(random.choice(Ordnance)))
     list.append('Kit 1: ' + str(random.choice(Kit1)))
     list.append('Kit 2: ' + str(random.choice(Kit2)))
-    list.append('Titan: ' + str(random.choice(Titan)))
+    random_titan = str(random.choice(Titan))
+    if random_titan = 'Ion':
+        titan_kit2 = str(random.choice(Ion_kits))
+    elif random_titan == 'Scorch':
+        titan_kit2 = str(random.choice(Scorch_kits))
+    elif random_titan == 'Northstar':
+        titan_kit2 = str(random.choice(Northstar_kits))
+    elif random_titan == 'Ronin':
+        titan_kit2 = str(random.choice(Ronin_kits))
+    elif random_titan == 'Tone':
+        titan_kit2 = str(random.choice(Tone_kits))
+    elif random_titan == 'Legion':
+        titan_kit2 = str(random.choice(Legion_kits))
+    list.append('Titan: ' + str(random_titan))
+    list.append('Titan Kit 1: ' + str(random.choice(TitanKit1)))
+    list.append('Titan Kit 2: ' + str(titan_kit2))
+    list.append('Titanfall Kit: ' + str(random.choice(TitanfallKits)))
     list.append('Boost: ' + str(random.choice(Boost)))
     return list
 
