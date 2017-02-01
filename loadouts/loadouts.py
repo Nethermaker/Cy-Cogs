@@ -66,7 +66,7 @@ def loadout():
     list.append('Kit 1: ' + str(random.choice(Kit1)))
     list.append('Kit 2: ' + str(random.choice(Kit2)))
     random_titan = str(random.choice(Titan))
-    if random_titan = 'Ion':
+    if random_titan == 'Ion':
         titan_kit2 = str(random.choice(Ion_kits))
     elif random_titan == 'Scorch':
         titan_kit2 = str(random.choice(Scorch_kits))
