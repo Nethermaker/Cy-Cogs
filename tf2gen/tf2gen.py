@@ -30,7 +30,7 @@ class tf2gen:
         pilot = '\n'.join(gen_pilot())
 
         await self.bot.say(
-            "Here is your random Pilot loadout, " + author.mention + ":\n"+ str(pilot)
+            "Here is your random Pilot loadout, " + author.mention + ":\n\n"+ str(pilot)
         )
 
     @gen.group(pass_context=True)
@@ -41,7 +41,18 @@ class tf2gen:
         titan = '\n'.join(gen_titan())
 
         await self.bot.say(
-            "Here is your random Titan loadout, " + author.mention + ":\n"+ str(titan)
+            "Here is your random Titan loadout, " + author.mention + ":\n\n"+ str(titan)
+        )
+        
+    @gen.group(pass_context=True)
+    async def all(self, ctx):
+        """Generates random loadout"""
+
+        author = ctx.message.author
+        all = '\n'.join(gen_all())
+
+        await self.bot.say(
+            "Here is your random loadout, " + author.mention + ":\n\n"+ str(all)
         )
 
 
@@ -69,6 +80,11 @@ def gen_titan():
             
     return items
 
+def gen_all():
+    items = []
+    items.extend(gen_pilot())
+    items.extend(gen_titan())
+    return items
 
 with open(tf2, 'r') as f:
     loadouts = json.loads(f.read(), object_pairs_hook=OrderedDict)
