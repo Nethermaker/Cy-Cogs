@@ -1,12 +1,11 @@
 import random
 import json
+from collections import OrderedDict
 from discord.ext import commands
 
 from __main__ import send_cmd_help
 
 loadouts = []
-
-keys = []
 
 tf2 = "data/tf2gen/tf2gen.json"
 
@@ -28,9 +27,11 @@ class tf2gen:
         """Generates random pilot loadout"""
 
         author = ctx.message.author
-        pilot = '\n'.join(pilot_gen())
+        pilot = '\n'.join(gen_pilot())
 
-        await self.bot.say(author.mention + "\n"+ str(pilot))
+        await self.bot.say(
+            "Here is your random pilot loadout, " + author.mention + ":\n"+ str(pilot)
+        )
 
     #@gen.group(pass_context=True)
     #async def titan(self, ctx):
@@ -42,12 +43,12 @@ class tf2gen:
     #    await self.bot.say(author.mention, titan)
 
 
-def pilot_gen():
-    p = []
+def gen_pilot():
+    items = []
     pilot_items = loadouts["pilot"]
     for key in pilot_items:
-      p.append(key + ": " + random.choice(pilot_items[key]):
-    return p
+      items.append(key + ": " + random.choice(pilot_items[key]))
+    return items
 
 
 def titan_gen():
@@ -55,13 +56,7 @@ def titan_gen():
 
 
 with open(tf2, 'r') as f:
-        loadouts = json.loads(f.read())
-        for c in loadouts:
-            if loadouts[c]:
-                keys.append(c)
-                for n in loadouts[c]:
-                    if loadouts[c][n]:
-                        keys.append(n)
+    loadouts = json.loads(f.read())
 
 
 def setup(bot):
