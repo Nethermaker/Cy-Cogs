@@ -30,7 +30,7 @@ class tf2gen:
         author = ctx.message.author
         pilot = '\n'.join(pilot_gen())
 
-        await self.bot.say(author.mention + str(pilot))
+        await self.bot.say(author.mention + "\n"+ str(pilot))
 
     #@gen.group(pass_context=True)
     #async def titan(self, ctx):
@@ -44,17 +44,9 @@ class tf2gen:
 
 def pilot_gen():
     p = []
-    pilot_loadouts = loadouts["pilot"]
-    prim = random.choice(list(pilot_loadouts["pilot_primary"].keys()))
-    sec = random.choice(list(pilot_loadouts["pilot_secondary"].keys()))
-    p.append(random.choice(pilot_loadouts["pilot_tactical"]))
-    p.append(random.choice(pilot_loadouts["pilot_primary"][prim]))
-    p.append(random.choice(pilot_loadouts["pilot_secondary"][sec]))
-    p.append(random.choice(pilot_loadouts["pilot_ordnance"]))
-    p.append(random.choice(pilot_loadouts["pilot_kit1"]))
-    p.append(random.choice(pilot_loadouts["pilot_kit2"]))
-    p.append(random.choice(pilot_loadouts["pilot_execution"]))
-    p.append(random.choice(pilot_loadouts["boost"]))
+    pilot_items = loadouts["pilot"]
+    for key in pilot_items:
+      p.append(key + ": " + random.choice(pilot_items[key]):
     return p
 
 
