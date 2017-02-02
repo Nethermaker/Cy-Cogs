@@ -1,12 +1,11 @@
 import random
 import json
+from collections import OrderedDict
 from discord.ext import commands
 
 from __main__ import send_cmd_help
 
 loadouts = []
-
-keys = []
 
 tf2 = "data/tf2gen/tf2gen.json"
 
@@ -28,48 +27,51 @@ class tf2gen:
         """Generates random pilot loadout"""
 
         author = ctx.message.author
-        pilot = '\n'.join(pilot_gen())
+        pilot = '\n'.join(gen_pilot())
 
-        await self.bot.say(author.mention + str(pilot))
+        await self.bot.say(
+            "Here is your random Pilot loadout, " + author.mention + ":\n"+ str(pilot)
+        )
 
-    #@gen.group(pass_context=True)
-    #async def titan(self, ctx):
-    #    """Generates random titan loadout"""
+    @gen.group(pass_context=True)
+    async def titan(self, ctx):
+        """Generates random titan loadout"""
 
-    #    author = ctx.message.author
-    #    titan = '\n'.join(titan_gen())
+        author = ctx.message.author
+        titan = '\n'.join(gen_titan())
 
-    #    await self.bot.say(author.mention, titan)
-
-
-def pilot_gen():
-    p = []
-    pilot_loadouts = loadouts["pilot"]
-    prim = random.choice(list(pilot_loadouts["pilot_primary"].keys()))
-    sec = random.choice(list(pilot_loadouts["pilot_secondary"].keys()))
-    p.append(random.choice(pilot_loadouts["pilot_tactical"]))
-    p.append(random.choice(pilot_loadouts["pilot_primary"][prim]))
-    p.append(random.choice(pilot_loadouts["pilot_secondary"][sec]))
-    p.append(random.choice(pilot_loadouts["pilot_ordnance"]))
-    p.append(random.choice(pilot_loadouts["pilot_kit1"]))
-    p.append(random.choice(pilot_loadouts["pilot_kit2"]))
-    p.append(random.choice(pilot_loadouts["pilot_execution"]))
-    p.append(random.choice(pilot_loadouts["boost"]))
-    return p
+        await self.bot.say(
+            "Here is your random Titan loadout, " + author.mention + ":\n"+ str(titan)
+        )
 
 
-def titan_gen():
-    pass
+def gen_pilot():
+    items = []
+    pilot_items = loadouts["pilot_items"]
+    for key in pilot_items:
+      items.append(key + ": " + random.choice(pilot_items[key]))
+    return items
+
+
+def gen_titan():
+    items = []
+    titan_items = loadouts["titan_items"]
+    titan = ""
+    for key in titan_items:
+        if isinstance(titan_items[key], list):
+            if key == "Titan":
+                titan = random.choice(titan_items[key])
+                items.append(key + ": " + titan)
+            else:
+                items.append(key + ": " + random.choice(titan_items[key]))
+        else:
+            items.append(key + ": " + random.choice(dict(titan_items[key].items())[titan]))
+            
+    return items
 
 
 with open(tf2, 'r') as f:
-        loadouts = json.loads(f.read())
-        for c in loadouts:
-            if loadouts[c]:
-                keys.append(c)
-                for n in loadouts[c]:
-                    if loadouts[c][n]:
-                        keys.append(n)
+    loadouts = json.loads(f.read())
 
 
 def setup(bot):

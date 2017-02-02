@@ -1,6 +1,6 @@
 {
-  "pilot": {
-    "pilot_tactical": [
+  "pilot_items": {
+    "Tactical": [
       "Cloak",
       "Pulse Blade",
       "Grapple",
@@ -9,56 +9,40 @@
       "Phase Shift",
       "Holo Pilot"
     ],
-    "pilot_primary": {
-      "assault": [
-        "R-201 Carbine",
-        "Hemlok BF-R",
-        "G2A5",
-        "V-47 Flatline"
-      ],
-      "submachine": [
-        "CAR",
-        "Alternator",
-        "Volt",
-        "R-97 Compact SMG"
-      ],
-      "machine": [
-        "Spitfire",
-        "L-STAR",
-        "X-55 Devotion"
-      ],
-      "sniper": [
-        "Kraber-AP Sniper",
-        "D-2 Double Take",
-        "Longbow-DMR"
-      ],
-      "shotgun": [
-        "EVA-8 Shotgun",
-        "Mastiff"
-      ],
-      "grenadier": [
-        "EM-4 Cold War",
-        "R-6P Softball",
-        "Sidewinder SMR",
-        "EPG-1"
-      ]
-    },
-    "pilot_secondary": {
-      "anti-titan": [
-        "Charge Rifle",
-        "MGL Mag Launcher",
-        "LG-97 Thunderbolt",
-        "Archer"
-      ],
-      "pistol": [
-        "P2016",
-        "RE-45 Auto",
-        "Wingman Elite",
-        "SA-3 Mozambique",
-        "B3 Wingman"
-      ]
-    },
-    "pilot_ordnance": [
+    "Primary": [
+      "R-201 Carbine",
+      "Hemlok BF-R",
+      "G2A5",
+      "V-47 Flatline",
+      "CAR",
+      "Alternator",
+      "Volt",
+      "R-97 Compact SMG",
+      "Spitfire",
+      "L-STAR",
+      "X-55 Devotion",
+      "Kraber-AP Sniper",
+      "D-2 Double Take",
+      "Longbow-DMR",
+      "EVA-8 Shotgun",
+      "Mastiff",
+      "EM-4 Cold War",
+      "R-6P Softball",
+      "Sidewinder SMR",
+      "EPG-1"
+    ],
+    "Secondary": [
+      "Charge Rifle",
+      "MGL Mag Launcher",
+      "LG-97 Thunderbolt",
+      "Archer",
+      "P2016",
+      "RE-45 Auto",
+      "Wingman Elite",
+      "SA-3 Mozambique",
+      "B3 Wingman"
+    ],
+    "Ordnance": [
       "Frag Grenade",
       "Arc Grenade",
       "Firestar",
@@ -66,22 +50,22 @@
       "Electric Smoke Grenade",
       "Satchel"
     ],
-    "pilot_kit1": [
+    "Kit1": [
       "Power Cell",
       "Fast Regen",
       "Ordnance Expert",
       "Phase Embark"
     ],
-    "pilot_kit2": [
+    "Kit2": [
       "Kill Report",
       "Wallhang",
       "Hover",
       "Low Profile"
     ],
-    "pilot_execution": [
+    "Execution": [
       "Neckbreaker", "2-3-2 Combo", "Knee Plus", "Grand Theft Semi-Auto", "Inner Pieces"
     ],
-    "boost": [
+    "Boost": [
       "Amped Weapons",
       "Ticks",
       "Pilot Sentry",
@@ -96,8 +80,8 @@
       "Dice Roll"
     ]
   },
-  "titan": {
-    "titans": [
+  "titan_items": {
+    "Titan": [
       "Ion",
       "Scorch",
       "Northstar",
@@ -105,7 +89,7 @@
       "Ronin",
       "Legion"
     ],
-    "titan_kit1": [
+    "Kit 1": [
       "Assault Chip",
       "Stealth Auto-Eject",
       "Turbo Engine",
@@ -113,43 +97,43 @@
       "Nuclear Ejection",
       "Counter Ready"
     ],
-    "titan_kit2": {
-      "ion_kit2": [
+    "Kit 2": {
+      "Ion": [
         "Entangled Energy",
         "Zero-Point Tripwire",
         "Vortex Amplifier",
         "Grand Cannon",
         "Refraction Lens"
       ],
-      "scorch_kit2": [
+      "Scorch": [
         "Wildfire Launcher",
         "Tempered Plating",
         "Inferno Shield",
         "Fuel for the Fire",
         "Scorched Earth"
       ],
-      "northstar_kit2": [
+      "Northstar": [
         "Piercing Shot",
         "Enhanced Payload",
         "Twin Traps",
         "Viper Thrusters",
         "Threat Optics"
       ],
-      "tone_kit2": [
-	"Enhanced Tracker Rounds",
+      "Tone": [
+        "Enhanced Tracker Rounds",
         "Reinforced Particle Wall",
         "Pulse-Echo",
         "Rocket Barrage",
         "Burst Loader"
       ],
-      "ronin_kit2": [
+      "Ronin": [
         "Ricochet Rounds",
         "Thunderstorm",
         "Temporal Anomaly",
         "Highlander",
         "Phase Reflex"
       ],
-      "legion_kit2": [
+      "Legion": [
         "Enhanced Ammo Capacity",
         "Sensor Array",
         "Bulwark",
@@ -157,7 +141,7 @@
         "Hidden Compartment"
       ]
     },
-    "kitTitanfall": [
+    "Titanfall Kit": [
       "Dome Shield",
       "Warpfall"
     ]
