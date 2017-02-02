@@ -60,7 +60,7 @@ def gen_pilot():
     items = []
     pilot_items = loadouts["pilot_items"]
     for key in pilot_items:
-      items.append(key + ": " + random.choice(pilot_items[key]))
+      items.append("**" + key + "**: " + random.choice(pilot_items[key]))
     return items
 
 
@@ -72,11 +72,11 @@ def gen_titan():
         if isinstance(titan_items[key], list):
             if key == "Titan":
                 titan = random.choice(titan_items[key])
-                items.append(key + ": " + titan)
+                items.append("**" + key + "**: " + titan)
             else:
-                items.append(key + ": " + random.choice(titan_items[key]))
+                items.append("**" + key + "**: " + random.choice(titan_items[key]))
         else:
-            items.append(key + ": " + random.choice(dict(titan_items[key].items())[titan]))
+            items.append("**" + key + "**: " + random.choice(dict(titan_items[key].items())[titan]))
             
     return items
 
