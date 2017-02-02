@@ -1,8 +1,8 @@
 {
     "AUTHOR" : "Praedyth",
     "SHORT" : "Global bans for Discord",
-    "DESCRIPTION" : "Talos bot main feature",
+    "DESCRIPTION" : "",
     "DISABLED" : false,
     "NAME" : "Gbans",
-    "INSTALL_MSG" : "I am not responsible for anything breaking."
+    "INSTALL_MSG" : ""
 }
