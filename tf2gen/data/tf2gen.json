@@ -1,5 +1,5 @@
 {
-  "pilot": {
+  "pilot_items": {
     "Tactical": [
       "Cloak",
       "Pulse Blade",
@@ -80,8 +80,8 @@
       "Dice Roll"
     ]
   },
-  "titan": {
-    "titans": [
+  "titan_items": {
+    "Titan": [
       "Ion",
       "Scorch",
       "Northstar",
@@ -89,7 +89,7 @@
       "Ronin",
       "Legion"
     ],
-    "titan_kit1": [
+    "Kit 1": [
       "Assault Chip",
       "Stealth Auto-Eject",
       "Turbo Engine",
@@ -97,49 +97,51 @@
       "Nuclear Ejection",
       "Counter Ready"
     ],
-    "ion_kit2": [
-      "Entangled Energy",
-      "Zero-Point Tripwire",
-      "Vortex Amplifier",
-      "Grand Cannon",
-      "Refraction Lens"
-    ],
-    "scorch_kit2": [
-      "Wildfire Launcher",
-      "Tempered Plating",
-      "Inferno Shield",
-      "Fuel for the Fire",
-      "Scorched Earth"
-    ],
-    "northstar_kit2": [
-      "Piercing Shot",
-      "Enhanced Payload",
-      "Twin Traps",
-      "Viper Thrusters",
-      "Threat Optics"
-    ],
-    "tone_kit2": [
-"Enhanced Tracker Rounds",
-      "Reinforced Particle Wall",
-      "Pulse-Echo",
-      "Rocket Barrage",
-      "Burst Loader"
-    ],
-    "ronin_kit2": [
-      "Ricochet Rounds",
-      "Thunderstorm",
-      "Temporal Anomaly",
-      "Highlander",
-      "Phase Reflex"
-    ],
-    "legion_kit2": [
-      "Enhanced Ammo Capacity",
-      "Sensor Array",
-      "Bulwark",
-      "Light-Weight Alloys",
-      "Hidden Compartment"
-    ],
-    "kitTitanfall": [
+    "Kit 2": {
+      "Ion": [
+        "Entangled Energy",
+        "Zero-Point Tripwire",
+        "Vortex Amplifier",
+        "Grand Cannon",
+        "Refraction Lens"
+      ],
+      "Scorch": [
+        "Wildfire Launcher",
+        "Tempered Plating",
+        "Inferno Shield",
+        "Fuel for the Fire",
+        "Scorched Earth"
+      ],
+      "Northstar": [
+        "Piercing Shot",
+        "Enhanced Payload",
+        "Twin Traps",
+        "Viper Thrusters",
+        "Threat Optics"
+      ],
+      "Tone": [
+        "Enhanced Tracker Rounds",
+        "Reinforced Particle Wall",
+        "Pulse-Echo",
+        "Rocket Barrage",
+        "Burst Loader"
+      ],
+      "Ronin": [
+        "Ricochet Rounds",
+        "Thunderstorm",
+        "Temporal Anomaly",
+        "Highlander",
+        "Phase Reflex"
+      ],
+      "Legion": [
+        "Enhanced Ammo Capacity",
+        "Sensor Array",
+        "Bulwark",
+        "Light-Weight Alloys",
+        "Hidden Compartment"
+      ]
+    },
+    "Titanfall Kit": [
       "Dome Shield",
       "Warpfall"
     ]

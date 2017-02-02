@@ -30,29 +30,44 @@ class tf2gen:
         pilot = '\n'.join(gen_pilot())
 
         await self.bot.say(
-            "Here is your random pilot loadout, " + author.mention + ":\n"+ str(pilot)
+            "Here is your random Pilot loadout, " + author.mention + ":\n"+ str(pilot)
         )
 
-    #@gen.group(pass_context=True)
-    #async def titan(self, ctx):
-    #    """Generates random titan loadout"""
+    @gen.group(pass_context=True)
+    async def titan(self, ctx):
+        """Generates random titan loadout"""
 
-    #    author = ctx.message.author
-    #    titan = '\n'.join(titan_gen())
+        author = ctx.message.author
+        titan = '\n'.join(gen_titan())
 
-    #    await self.bot.say(author.mention, titan)
+        await self.bot.say(
+            "Here is your random Titan loadout, " + author.mention + ":\n"+ str(titan)
+        )
 
 
 def gen_pilot():
     items = []
-    pilot_items = loadouts["pilot"]
+    pilot_items = loadouts["pilot_items"]
     for key in pilot_items:
       items.append(key + ": " + random.choice(pilot_items[key]))
     return items
 
 
-def titan_gen():
-    pass
+def gen_titan():
+    items = []
+    titan_items = loadouts["titan_items"]
+    titan = ""
+    for key in titan_items:
+        if isinstance(titan_items[key], list):
+            if key == "Titan":
+                titan = random.choice(titan_items[key])
+                items.append(key + ": " + titan)
+            else:
+                items.append(key + ": " + random.choice(titan_items[key]))
+        else:
+            items.append(key + ": " + random.choice(dict(titan_items[key].items())[titan]))
+            
+    return items
 
 
 with open(tf2, 'r') as f:
