@@ -8,7 +8,7 @@ loadouts = []
 
 keys = []
 
-tf2 = "data/tf2gen/tf2.json"
+tf2 = "data/tf2gen/tf2gen.json"
 
 
 class tf2gen:
