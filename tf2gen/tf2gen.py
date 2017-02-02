@@ -71,7 +71,7 @@ def gen_titan():
 
 
 with open(tf2, 'r') as f:
-    loadouts = json.loads(f.read())
+    loadouts = json.loads(f.read(), object_pairs_hook=OrderedDict)
 
 
 def setup(bot):
