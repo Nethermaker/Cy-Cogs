@@ -72,7 +72,7 @@ class Gbans:
                 s.truncate()
             await self.bot.say("Protection disabled.")
         else:
-            with open('data/gbans/servers.txt', 'a') as s:
+            with open(serverlist, 'a') as s:
                 s.write(server + '\n')
                 await self.bot.say("Protection enabled.")
 
