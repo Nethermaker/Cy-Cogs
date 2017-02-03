@@ -3,6 +3,6 @@
     "SHORT" : "",
     "DESCRIPTION" : "Generates Titanfall loadouts.",
     "DISABLED" : false,
-    "NAME" : "TF2 Gen",
+    "NAME" : "tf2gen",
     "INSTALL_MSG" : ""
 }
