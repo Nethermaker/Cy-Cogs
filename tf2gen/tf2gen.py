@@ -55,6 +55,16 @@ class tf2gen:
             "Here is your random loadout, " + author.mention + ":\n\n"+ str(all)
         )
 
+    @gen.group(pass_context=True, hidden=True)
+    async def cancer(self, ctx):
+        """Generates cancerous loadout"""
+        
+        author = ctx.message.author
+        all = "\n".join(gen_cancer())
+        
+        await self.bot.say(
+            "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
+        )   
 
 def gen_pilot():
     items = []
@@ -85,6 +95,24 @@ def gen_all():
     items.extend(gen_pilot())
     items.extend(gen_titan())
     return items
+    
+def gen_cancer():
+    items = []
+    pilot_items = loadouts["pilot_items"]
+    items.append("**Tactical**: A-Wall")
+    items.append("**Primary**: " + str(random.choice(["Devotion", "Hemlok BF-R"])))
+    items.append("**Secondary**: MGL Mag Launcher")
+    items.append("**Ordnance**: Arc Grenade")
+    items.append("**Kit 1**: Power Cell")
+    items.append("**Kit 2**: Low Profile")
+    items.append("**Execution**: " + str(random.choice(pilot_items["Execution"])))
+    items.append("**Boost**: Pilot Sentry")
+    items.append("**Titan**: Tone")
+    items.append("**Kit 1**: Overcore")
+    items.append("**Kit 2**: Pulse-Echo")
+    items.append("**Titanfall Kit**: Dome Shield")
+    return items
+
 
 with open(tf2, 'r') as f:
     loadouts = json.loads(f.read(), object_pairs_hook=OrderedDict)
