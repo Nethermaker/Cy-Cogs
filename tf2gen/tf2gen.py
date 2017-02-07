@@ -49,6 +49,7 @@ class tf2gen:
         """Generates random loadout"""
 
         author = ctx.message.author
+        if (
         all = '\n'.join(gen_all())
 
         await self.bot.say(
@@ -60,11 +61,21 @@ class tf2gen:
         """Generates cancerous loadout"""
         
         author = ctx.message.author
-        all = "\n".join(gen_cancer())
+        authorRoles = author.roles
+        serverRoles = Server.roles
+        validRoleNames = ["Admins", "Mods"]
+        validUsers = ["@Ginger#1304", "@Vorducas#6921", "@Nethermaker#9667"]
+        validRoleObjects = []
+        for (role in serverRoles) {
+            if (role.name in validRoleNames) {
+                validRoleObjects.append(role)
         
-        await self.bot.say(
-            "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
-        )   
+        if (set(validRoleObjects).isdisjoint(set(authorRoles)) or author.mention in validUsers):
+            all = "\n".join(gen_cancer())
+            
+            await self.bot.say(
+                "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
+            )   
 
 def gen_pilot():
     items = []
