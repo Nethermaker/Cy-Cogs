@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Vorducas, Nethermaker, Statictype, Praedyth",
+    "SHORT" : "",
+    "DESCRIPTION" : "Various utilities for the game Titanfall 2",
+    "DISABLED" : false,
+    "NAME" : "tf2util",
+    "INSTALL_MSG" : ""
+}
