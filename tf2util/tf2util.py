@@ -65,8 +65,8 @@ class tf2util:
         validRoleNames = ["Admins", "Mods"]
         validUsers = ["@Ginger#1304", "@Vorducas#6921", "@Nethermaker#9667"]
         validRoleObjects = []
-        for (role in serverRoles) {
-            if (role.name in validRoleNames) {
+        for (role in serverRoles):
+            if (role.name in validRoleNames):
                 validRoleObjects.append(role)
         
         if (set(validRoleObjects).isdisjoint(set(authorRoles)) or author.mention in validUsers):
