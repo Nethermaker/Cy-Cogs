@@ -30,7 +30,7 @@ class tf2util:
         pilot = '\n'.join(gen_pilot())
 
         await self.bot.say(
-            "Here is your random Pilot loadout, " + author.mention + ":\n\n" + str(pilot)
+            "Here is your random Pilot loadout, " + author.mention + "\n\n" + str(pilot)
         )
 
     @gen.group(pass_context=True)
@@ -41,7 +41,7 @@ class tf2util:
         titan = '\n'.join(gen_titan())
 
         await self.bot.say(
-            "Here is your random Titan loadout, " + author.mention + ":\n\n" + str(titan)
+            "Here is your random Titan loadout, " + author.mention + "\n\n" + str(titan)
         )
 
     @gen.group(pass_context=True)
@@ -52,7 +52,7 @@ class tf2util:
         all = '\n'.join(gen_all())
 
         await self.bot.say(
-            "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
+            "Here is your random loadout, " + author.mention + "\n\n" + str(all)
         )
 
     #@gen.group(pass_context=True, hidden=True)
