@@ -30,7 +30,7 @@ class tf2util:
         pilot = '\n'.join(gen_pilot())
 
         await self.bot.say(
-            "Here is your random Pilot loadout, " + author.mention + ":\n\n"+ str(pilot)
+            "Here is your random Pilot loadout, " + author.mention + ":\n\n" + str(pilot)
         )
 
     @gen.group(pass_context=True)
@@ -41,9 +41,9 @@ class tf2util:
         titan = '\n'.join(gen_titan())
 
         await self.bot.say(
-            "Here is your random Titan loadout, " + author.mention + ":\n\n"+ str(titan)
+            "Here is your random Titan loadout, " + author.mention + ":\n\n" + str(titan)
         )
-        
+
     @gen.group(pass_context=True)
     async def all(self, ctx):
         """Generates random loadout"""
@@ -52,35 +52,36 @@ class tf2util:
         all = '\n'.join(gen_all())
 
         await self.bot.say(
-            "Here is your random loadout, " + author.mention + ":\n\n"+ str(all)
+            "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
         )
 
-    @gen.group(pass_context=True, hidden=True)
-    async def cancer(self, ctx):
-        """Generates cancerous loadout"""
-        
-        author = ctx.message.author
-        authorRoles = author.roles
-        serverRoles = Server.roles
-        validRoleNames = ["Admins", "Mods"]
-        validUsers = ["@Ginger#1304", "@Vorducas#6921", "@Nethermaker#9667"]
-        validRoleObjects = []
-        for role in serverRoles:
-            if role.name in validRoleNames:
-                validRoleObjects.append(role)
-        
-        if set(validRoleObjects).isdisjoint(set(authorRoles)) or author.mention in validUsers:
-            all = "\n".join(gen_cancer())
-            
-            await self.bot.say(
-                "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
-            )   
+    #@gen.group(pass_context=True, hidden=True)
+    #async def cancer(self, ctx):
+    #    """Generates cancerous loadout"""
+    #    
+    #    author = ctx.message.author
+    #    authorRoles = author.roles
+    #    serverRoles = Server.roles
+    #    validRoleNames = ["Admins", "Mods"]
+    #    validUsers = ["@Ginger#1304", "@Vorducas#6921", "@Nethermaker#9667"]
+    #    validRoleObjects = []
+    #    for role in serverRoles:
+    #        if role.name in validRoleNames:
+    #            validRoleObjects.append(role)
+    #    
+    #    if set(validRoleObjects).isdisjoint(set(authorRoles)) or author.mention in validUsers:
+    #        all = "\n".join(gen_cancer())
+    #        
+    #        await self.bot.say(
+    #            "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
+    #        )   
+
 
 def gen_pilot():
     items = []
     pilot_items = loadouts["pilot_items"]
     for key in pilot_items:
-      items.append("**" + key + "**: " + random.choice(pilot_items[key]))
+        items.append("**" + key + "**: " + random.choice(pilot_items[key]))
     return items
 
 
@@ -97,15 +98,17 @@ def gen_titan():
                 items.append("**" + key + "**: " + random.choice(titan_items[key]))
         else:
             items.append("**" + key + "**: " + random.choice(dict(titan_items[key].items())[titan]))
-            
+
     return items
+
 
 def gen_all():
     items = []
     items.extend(gen_pilot())
     items.extend(gen_titan())
     return items
-    
+
+
 def gen_cancer():
     items = []
     pilot_items = loadouts["pilot_items"]
@@ -124,7 +127,7 @@ def gen_cancer():
     return items
 
 
-with open(loadout_data, 'r') as f:
+with open(loadoutData, 'r') as f:
     loadouts = json.loads(f.read(), object_pairs_hook=OrderedDict)
 
 
