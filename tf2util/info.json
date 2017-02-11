@@ -1,8 +1,8 @@
 {
     "AUTHOR" : "Vorducas, Nethermaker, Statictype, Praedyth",
     "SHORT" : "",
-    "DESCRIPTION" : "Generates Titanfall loadouts.",
+    "DESCRIPTION" : "Various utilities for the game Titanfall 2",
     "DISABLED" : false,
-    "NAME" : "tf2gen",
+    "NAME" : "tf2util",
     "INSTALL_MSG" : ""
 }

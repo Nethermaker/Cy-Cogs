@@ -7,11 +7,11 @@ from __main__ import send_cmd_help
 
 loadouts = []
 
-tf2 = "data/tf2gen/tf2gen.json"
+loadoutData = "data/tf2util/loadout_items.json"
 
 
-class tf2gen:
-    """Titanfall 2 loadout generator"""
+class tf2util:
+    """Titanfall 2 utilities"""
 
     def __init__(self, bot):
         self.bot = bot
@@ -55,6 +55,26 @@ class tf2gen:
             "Here is your random loadout, " + author.mention + ":\n\n"+ str(all)
         )
 
+    @gen.group(pass_context=True, hidden=True)
+    async def cancer(self, ctx):
+        """Generates cancerous loadout"""
+        
+        author = ctx.message.author
+        authorRoles = author.roles
+        serverRoles = Server.roles
+        validRoleNames = ["Admins", "Mods"]
+        validUsers = ["@Ginger#1304", "@Vorducas#6921", "@Nethermaker#9667"]
+        validRoleObjects = []
+        for (role in serverRoles) {
+            if (role.name in validRoleNames) {
+                validRoleObjects.append(role)
+        
+        if (set(validRoleObjects).isdisjoint(set(authorRoles)) or author.mention in validUsers):
+            all = "\n".join(gen_cancer())
+            
+            await self.bot.say(
+                "Here is your random loadout, " + author.mention + ":\n\n" + str(all)
+            )   
 
 def gen_pilot():
     items = []
@@ -85,11 +105,29 @@ def gen_all():
     items.extend(gen_pilot())
     items.extend(gen_titan())
     return items
+    
+def gen_cancer():
+    items = []
+    pilot_items = loadouts["pilot_items"]
+    items.append("**Tactical**: A-Wall")
+    items.append("**Primary**: " + str(random.choice(["Devotion", "Hemlok BF-R"])))
+    items.append("**Secondary**: MGL Mag Launcher")
+    items.append("**Ordnance**: Arc Grenade")
+    items.append("**Kit 1**: Power Cell")
+    items.append("**Kit 2**: Low Profile")
+    items.append("**Execution**: " + str(random.choice(pilot_items["Execution"])))
+    items.append("**Boost**: Pilot Sentry")
+    items.append("**Titan**: Tone")
+    items.append("**Kit 1**: Overcore")
+    items.append("**Kit 2**: Pulse-Echo")
+    items.append("**Titanfall Kit**: Dome Shield")
+    return items
 
-with open(tf2, 'r') as f:
+
+with open(loadout_data, 'r') as f:
     loadouts = json.loads(f.read(), object_pairs_hook=OrderedDict)
 
 
 def setup(bot):
     """Adds the cog"""
-    bot.add_cog(tf2gen(bot))
+    bot.add_cog(tf2util(bot))
