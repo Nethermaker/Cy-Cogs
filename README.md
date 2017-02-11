@@ -1,2 +1,2 @@
-# Prae-Cogs
-Praedyth's personal cogs.
+# Cy-Cogs
+Cynotek's personal cogs.
